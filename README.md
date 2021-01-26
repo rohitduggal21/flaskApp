@@ -1,6 +1,5 @@
 ### OBJECTIVE
 	- Create a Flask Web-API (ProcessPayment) that receives a request as below:
-		```
 		{
 			"CreditCardNumber":(mandatory, string, it should be a valid credit card number with 16 digits),
 			"CardHolder":(mandatory, string),
@@ -8,17 +7,16 @@
 			"SecurityCde": (optional, string, 3 digits),
 			"Amount": (mandatoy decimal, positive amount)
 	     	}
-		```
 	- Next step is to process the payment based on the amount entered.
 
 ### PRE-REQUISITES
-	- flask: `pip3 install flask`
-	- pymongo: `pip3 install pymongo`
+	- flask: pip3 install flask
+	- pymongo: pip3 install pymongo
 
 ### INSTRUCTIONS
 	- Get inside the repo flaskApp
 	- Execute command: python3 flask_API.py
-	- Flask test server is now running, a request can be made with python's `request` module:
+	- Flask test server is now running, a request can be made with python's requests module:
 	```
 		import requests
 		import json
