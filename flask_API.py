@@ -64,6 +64,16 @@ Verify Credentials
 Note:	
 	(1) We assume that the structure of JSON to be received is fixed.
 	(2) That means, even if the user doesn't enter optional parameters, we still get those keys with NULL/None values
+	(3) This function returns False if:
+					- Type of credentials received is not of dict type
+					- Keys of credentials are not ["CreditCardNumber","CardHolder","ExpirationDate","SecurityCode","Amount"]
+					- CreditCardNumber is None/NULL
+					- Length(CreditCardNumber) does not equal 16
+					- CardHolder is None/NULL
+					- Type of ExpirationDate is not datetime
+					- Expiration date is in the past
+					- Type of Amount is not float
+					- Length(SecurityCode) is not 3 (if SecurityCode is entered)
 '''
 def verifyCredentials(cred):	
 	if type(cred) is not dict or list(cred.keys()) != ["CreditCardNumber","CardHolder","ExpirationDate","SecurityCode","Amount"] or cred["CreditCardNumber"] is None or len(cred["CreditCardNumber"])!=16 or cred["CardHolder"] is None or type(cred['ExpirationDate'])!=datetime.datetime or cred['ExpirationDate'].year < datetime.datetime.now().year or (cred['ExpirationDate'].year == datetime.datetime.now().year and cred['ExpirationDate'].month < datetime.datetime.now().month)  or type(cred["Amount"])!=float or (cred["SecurityCode"] is not None and len(cred["SecurityCode"])!=3):	
