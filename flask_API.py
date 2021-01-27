@@ -92,8 +92,8 @@ Example:
 	data={
 		"CreditCardNumber":"1234567891234567",
 		"CardHolder":"Rohit Duggal",
-		"ExpirationDate":datetime.datetime.now(),
-		"SecurityCde":"123",
+		"ExpirationDate":datetime.datetime(2025,12,31),
+		"SecurityCode":"123",
 		"Amount":1.24
 	     }
 
