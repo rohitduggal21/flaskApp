@@ -76,7 +76,7 @@ Note:
 					- Length(SecurityCode) is not 3 (if SecurityCode is entered)
 '''
 def verifyCredentials(cred):	
-	if type(cred) is not dict or list(cred.keys()) != ["CreditCardNumber","CardHolder","ExpirationDate","SecurityCode","Amount"] or cred["CreditCardNumber"] is None or len(cred["CreditCardNumber"])!=16 or cred["CardHolder"] is None or type(cred['ExpirationDate'])!=datetime.datetime or cred['ExpirationDate'].year < datetime.datetime.now().year or (cred['ExpirationDate'].year == datetime.datetime.now().year and cred['ExpirationDate'].month < datetime.datetime.now().month)  or type(cred["Amount"])!=float or (cred["SecurityCode"] is not None and len(cred["SecurityCode"])!=3):	
+	if type(cred) is not dict or list(cred.keys()) != ["CreditCardNumber","CardHolder","ExpirationDate","SecurityCode","Amount"] or cred["CreditCardNumber"] is None or len(cred["CreditCardNumber"])!=16 or cred["CardHolder"] is None or type(cred['ExpirationDate'])!=datetime.datetime or cred['ExpirationDate'] < datetime.datetime.now() or type(cred["Amount"])!=float or (cred["SecurityCode"] is not None and len(cred["SecurityCode"])!=3):	
 		return False
 	else:	
 		return True
