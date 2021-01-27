@@ -4,7 +4,7 @@
 			"CreditCardNumber":(mandatory, string, it should be a valid credit card number with 16 digits),
 			"CardHolder":(mandatory, string),
 			"ExpirationDate": (mandatory, DateTime, it cannot be in the past),
-			"SecurityCde": (optional, string, 3 digits),
+			"SecurityCode": (optional, string, 3 digits),
 			"Amount": (mandatoy decimal, positive amount)
 	     	}
 	- Next step is to process the payment based on the amount entered.
@@ -26,7 +26,7 @@
 			"CreditCardNumber":"1234567891234567",
 			"CardHolder":"Rohit Duggal",
 			"ExpirationDate":datetime.datetime.now(),
-			"SecurityCde":"123",
+			"SecurityCode":"123",
 			"Amount":1.24
 	     	     }
 
